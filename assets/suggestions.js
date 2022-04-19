@@ -1,12 +1,26 @@
 // getting all required elements
 const searchWrapper = document.querySelector(".search-input");
-const inputBox = searchWrapper.querySelector("input");
+const inputBox = document.getElementById("header-search-input");
+const searchResultsDiv = document.getElementById("search-results");
 const suggBox = searchWrapper.querySelector(".autocom-box");
+const resultsList = document.getElementById('recent-list');
 const icon = searchWrapper.querySelector(".icon");
 let linkTag = searchWrapper.querySelector("a");
 let webLink;
+fetch("/assets/suggestions.json")
+  .then(response => response.json())
+  .then(json => {
+      var suggestionsJson = json;
+      console.log(suggestionsJson['Announcement Bar']);
+  });
 
 let suggestions = [
+    "Announcement Bar",
+    "Collection Page",
+    "Cart Page",
+    "Tutorial Videos"
+]
+let _suggestions = [
     "Channel",
     "CodingLab",
     "CodingNepal",
@@ -45,6 +59,17 @@ inputBox.onkeyup = (e)=>{
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         }
+        const matches = suggestions.filter(s => s.toLocaleLowerCase().includes(userData.toLocaleLowerCase()));
+
+        if(matches.length > 0){
+            searchResultsDiv.style.minHeight = '50px';
+        }
+        var _matched = suggestions.find(element => {
+            if (element.includes()) {
+              return true;
+            }
+          });
+       console.log(matches);
         emptyArray = suggestions.filter((data)=>{
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
