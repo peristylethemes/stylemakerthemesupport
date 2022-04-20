@@ -119,15 +119,7 @@
             </div>-->
           <div id="content" class="textcontent_form">
             <h3>Contact Form</h3>
-            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
-              <script>
-                hbspt.forms.create({
-                region: "na1",
-                portalId: "21804889",
-                formId: "0a797f6c-f7a8-4c0f-9085-7ede8928dcf1"
-              });
-              </script>
-
+            
           </div>
           <footer id="kb-footer">
             <div id="footer-content">
@@ -152,7 +144,11 @@
         </div>
       </div>
     </div>
-    <script src="assets/suggestions.js"></script> 
+    <script>
+        fetch('https://api.hubapi.com/form-integrations/v1/submissions/forms/b8c5ff91-39c0-410e-ba1e-d3f6419163a6?hapikey=0921cea7-9d31-44a4-abec-230d5dfd56e8&limit=5')
+        .then(response => response.json())
+        .then(data => console.log(data));
+    </script>
     <!--Start of Tawk.to Script-->
 <script type="text/javascript">
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
