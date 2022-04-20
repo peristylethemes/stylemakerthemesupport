@@ -1,11 +1,11 @@
 // getting all required elements
-const searchWrapper = document.querySelector(".search-input");
+//const searchWrapper = document.querySelector(".search-input");
 const inputBox = document.getElementById("header-search-input");
 const searchResultsDiv = document.getElementById("search-results");
-const suggBox = searchWrapper.querySelector(".autocom-box");
+//const suggBox = searchWrapper.querySelector(".autocom-box");
 const resultsList = document.getElementById('recent-list');
-const icon = searchWrapper.querySelector(".icon");
-let linkTag = searchWrapper.querySelector("a");
+//const icon = searchWrapper.querySelector(".icon");
+//let linkTag = searchWrapper.querySelector("a");
 let webLink;
 fetch("/assets/suggestions.json")
   .then(response => response.json())
@@ -18,7 +18,15 @@ let suggestions = [
     "Announcement Bar",
     "Collection Page",
     "Cart Page",
-    "Tutorial Videos"
+    "Tutorial Videos",
+    "Theme Installation",
+    "Header",
+    "Sections",
+    "Footer",
+    "Search Page & Search Popup",
+    "Changelog",
+    "Newsletter",
+    "Home Page"
 ]
 let _suggestions = [
     "Channel",
@@ -54,11 +62,11 @@ inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user enetered data
     let emptyArray = [];
     if(userData){
-        icon.onclick = ()=>{
+       /* icon.onclick = ()=>{
             webLink = `https://www.google.com/search?q=${userData}`;
             linkTag.setAttribute("href", webLink);
             linkTag.click();
-        }
+        }*/
         const matches = suggestions.filter(s => s.toLocaleLowerCase().includes(userData.toLocaleLowerCase()));
 
         if(matches.length > 0){
@@ -70,7 +78,7 @@ inputBox.onkeyup = (e)=>{
             }
           });
        console.log(matches);
-        emptyArray = suggestions.filter((data)=>{
+        /*emptyArray = suggestions.filter((data)=>{
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
         });
@@ -84,7 +92,7 @@ inputBox.onkeyup = (e)=>{
         for (let i = 0; i < allList.length; i++) {
             //adding onclick attribute in all li tag
             allList[i].setAttribute("onclick", "select(this)");
-        }
+        }*/
     }else{
         searchWrapper.classList.remove("active"); //hide autocomplete box
     }

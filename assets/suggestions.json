@@ -1,17 +1,38 @@
 {
+    "Home Page": { 
+        "type": "category",
+        "url": "category/home-page",
+        "title": "Home Page",
+        "articles": 12
+    },
+    "Fonts":{
+        "type": "category",
+        "url": "category/fonts",
+        "title": "Announcement Bar",
+        "articles": 6
+    },
     "Tutorial Videos":{
+        "type": "category",
         "url": "category/tutorial-videos",
         "title": "Announcement Bar",
         "articles": 6
     },
     "Announcement Bar": { 
+        "type": "category",
         "url": "category/announcement-bar",
         "title": "Announcement Bar",
         "articles": 3
      },
     "Product Quiz": { 
+        "type": "category",
         "url": "category/product-quiz",
         "title": "Product Quiz",
+        "articles": 2
+    },
+    "Theme Installation": { 
+        "type": "category",
+        "url": "category/theme-installation",
+        "title": "Theme Installation",
         "articles": 2
     }
 }
