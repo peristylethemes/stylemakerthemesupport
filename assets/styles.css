@@ -9183,10 +9183,13 @@ header {
 .textcontent_form {
   margin: 2rem 20rem;
   padding: 2rem 5rem;
-  border: 1px solid #EAEAEA;
+  /*border: 1px solid #EAEAEA;
   border-radius: 5px;
-  background-color: #EAEAEA;
+  background-color: #EAEAEA;*/
 }
 textarea {
   height: 250px;
+}
+.hs-form-iframe {
+  margin-bottom: -150px;
 }
