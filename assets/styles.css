@@ -9176,19 +9176,31 @@ header {
   box-shadow: 0px 2px 5px 2px #000;
   color: #fff;
 }
-.textcontent{
-  margin: 2rem 5rem;
-  padding: 2rem 5rem;
+@media screen and (min-device-width: 768px) {
+  .textcontent{
+    margin: 2rem 5rem;
+    padding: 2rem 5rem;
+  }
+  .textcontent_form {
+    margin: 2rem 20rem;
+    padding: 2rem 5rem;
+    /*border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    background-color: #EAEAEA;*/
+  }
 }
-.textcontent_form {
-  margin: 2rem 20rem;
-  padding: 2rem 5rem;
-  /*border: 1px solid #EAEAEA;
-  border-radius: 5px;
-  background-color: #EAEAEA;*/
-}
-textarea {
-  height: 250px;
+@media screen and (max-device-width: 768px) {
+  .textcontent{
+    margin: 0.5rem 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  .textcontent_form {
+    margin: 2rem 2rem;
+    padding: 0.5rem 2rem;
+    /*border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    background-color: #EAEAEA;*/
+  }
 }
 .hs-form-iframe {
   margin-bottom: -150px;
