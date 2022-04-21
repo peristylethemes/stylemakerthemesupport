@@ -145,9 +145,25 @@
       </div>
     </div>
     <script>
-        fetch('https://api.hubapi.com/form-integrations/v1/submissions/forms/b8c5ff91-39c0-410e-ba1e-d3f6419163a6?hapikey=0921cea7-9d31-44a4-abec-230d5dfd56e8&limit=5')
+       // Send request to get submissions
+       var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function success() {
+          if (!xhr.readyState === 4 || !xhr.status === 200) {
+            return;            
+          }
+          if(xhr.readyState === 4) {
+            console.log(JSON.parse(xhr.responseText));
+            //window.location = 'https://orangethemesandapps.com/contactsuccess';
+            
+          }
+        };
+
+        xhr.open("GET", "https://mail.peristylethemes.com/getsubmissions");   
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send();
+        /*fetch('https://mail.peristylethemes.com/getsubmissions')
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => console.log(data));*/
     </script>
     <!--Start of Tawk.to Script-->
 <script type="text/javascript">
