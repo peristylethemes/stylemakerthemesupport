@@ -58,7 +58,9 @@ a {
 .message-us:hover {
   text-decoration: underline
 }
-
+.logo {
+    margin-left: -100px!important;
+}
 .btn {
   border: 0;
   padding: 8px;
